@@ -7,7 +7,7 @@ query GetUser($email:String!) {
         avatarUrl
         description
         githubUrl
-        linkedinUrl
+        linkedInUrl
     }
 }`
 export const createUserMutation = `
