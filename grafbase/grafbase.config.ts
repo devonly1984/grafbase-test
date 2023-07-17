@@ -34,7 +34,6 @@ const User = g.model('User', {
     schema: g,
     auth: {
       providers: [jwt],
-      
       rules: (rules)=> rules.private(),
     }
   })
