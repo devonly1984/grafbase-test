@@ -51,11 +51,12 @@ const ProjectForm = ({type,session}:ProjectFormProps) => {
     e.preventDefault();
     setIsSubmitting(true);
     const token = await fetchToken();
+    
  try {
       if (type ==="create") {
         
         
-        await createNewProject(form,session.user.id,token)
+        await createNewProject(form,session.user.id,token.token)
         router.push('/');
       }
     } catch (error) {
