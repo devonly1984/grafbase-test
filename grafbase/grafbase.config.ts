@@ -37,4 +37,4 @@ const User = g.model('User', {
       
       rules: (rules)=> rules.private(),
     }
-  });
+  })
