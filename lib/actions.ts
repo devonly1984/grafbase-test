@@ -63,17 +63,17 @@ export const createNewProject = async (
   const imageUrl = await uploadImage(form.image);
 
   if (imageUrl.url) {
-    console.log("Token on Creating",token);
+  
     
     client.setHeader("authorization", `Bearer ${token}`);
-    console.log("Client Request Config",client.requestConfig)
-    debugger;
+  
+
     const variables = {
       input: {
         ...form,
         image: imageUrl.url,
         createdBy: {
-          link: creatorId,
+          locations: creatorId,
         },
       },
     };
@@ -83,8 +83,6 @@ export const createNewProject = async (
 };
 export const getUser = (email: string) => {
   client.setHeader("x-api-key", apiKey);
-  console.log(email);
-  debugger;
   return makeGraphQLRequest(getUserQuery, { email });
 };
 export const createUser = (name: string, email: string, avatarUrl: string) => {
