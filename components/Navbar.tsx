@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { NavLinks } from '@/constants/constants';
+import { NavLinks } from '@/constant';
 import AuthProviders from './AuthProviders';
 import { getCurrentUser } from '@/lib/session';
 import { signOut } from 'next-auth/react';
