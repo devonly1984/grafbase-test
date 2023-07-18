@@ -1,11 +1,19 @@
+import { UserProfile } from "@/common.types"
+import { getUserProjects } from "@/lib/actions"
+import {ProfilePage} from '@/components';
+type Props = {
+  params: {
+    id: string
+  }
+}
 
-
-type Props = {}
-
-const ProfilePage = (props: Props) => {
+const UserProfile = async({params}:Props) => {
+  const result = await getUserProjects(params.id,100) as {user: UserProfile}  
+  if (!result?.user) {
+<p className="no-result-text">Failed to fetch user info</p>  }
   return (
-    <div>page</div>
+    <ProfilePage user={result?.user}/>
   )
 }
 
-export default ProfilePage
+export default UserProfile;

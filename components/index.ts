@@ -15,3 +15,4 @@ export {default as RelatedProjects} from './RelatedProjects'
 export {default as ProjectActions} from './ProjectActions';
 export {default as Categories} from './Categories';
 export {default as LoadMore} from './LoadMore'
+export {default as ProfilePage} from './ProfilePage'
